@@ -1,6 +1,4 @@
 from math import sqrt
-
-
 # ---------------- TALLER ----------------
 
 # Ejercicio 1 - CRUD de pasajeros con clase Pasajero + list

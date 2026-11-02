@@ -7,6 +7,9 @@ lista2 = ListaPython()
 
 
 # ------------------------- funciones de apoyo ✅ -------------------------
+def pausa():
+    input("\nPresione Enter para continuar...")
+
 def leer_entero(mensaje):
     while True:
         try:
@@ -57,13 +60,16 @@ def menu_lista1():
             pasajero = leer_pasajero()                 # 1. LEER
             if lista1.añadir(pasajero):                # 2. LLAMAR
                 print("  ✓ Pasajero añadido")          # 3. MOSTRAR
+            pausa()
         elif op == "2":
             lista1.listar()
+            pausa()
         elif op == "3":
             posicion = leer_entero("  Posición: ")
             pasajero = leer_pasajero()
             if lista1.insertar(posicion, pasajero):
                 print("  ✓ Pasajero insertado")
+            pausa()
         elif op == "4":
             numero = leer_entero("  N.º de pasajero a buscar: ")
             pos = lista1.buscar(numero)
@@ -71,6 +77,7 @@ def menu_lista1():
                 print("  No existe")
             else:
                 print(f"  Encontrado en [{pos}]: {lista1.obtener(pos).nombre}")
+            pausa()
         elif op == "5":
             numero = leer_entero("  N.º de pasajero a buscar (lista ordenada): ")
             pos = lista1.buscar_binaria(numero)
@@ -78,6 +85,7 @@ def menu_lista1():
                 print("  No existe")
             else:
                 print(f"  Encontrado en [{pos}]: {lista1.obtener(pos).nombre}")
+            pausa()
         elif op == "6":
             numero = leer_entero("  N.º de pasajero a modificar: ")
             destino = input("  Nuevo destino: ").strip()
@@ -86,26 +94,32 @@ def menu_lista1():
                 print("  ✓ Pasajero modificado")
             else:
                 print("  No existe")
+            pausa()
         elif op == "7":
             posicion = leer_entero("  Posición a eliminar: ")
             eliminado = lista1.eliminar_por_posicion(posicion)
             if eliminado is not None:
                 print(f"  Eliminado: {eliminado.nombre}; quedan {lista1.longitud()}")
+            pausa()
         elif op == "8":
             numero = leer_entero("  N.º de pasajero a eliminar: ")
             if lista1.eliminar_por_valor(numero):
                 print("  ✓ Pasajero eliminado")
             else:
                 print("  No existe")
+            pausa()
         elif op == "9":
             lista1.ordenar_asc()
             print("  ✓ Ordenada de menor a mayor")
+            pausa()
         elif op == "10":
             lista1.ordenar_desc()
             print("  ✓ Ordenada de mayor a menor")
+            pausa()
         elif op == "11":
             lista1.reversar()
             print("  ✓ Lista reversada")
+            pausa()
         elif op == "12":
             copia = lista1.copiar()
             copia.reversar()                           # reverso solo la copia
@@ -113,10 +127,13 @@ def menu_lista1():
             copia.listar()
             print("  Original (no cambia):")
             lista1.listar()
+            pausa()
         elif op == "13":
             print(f"  Longitud: {lista1.longitud()}")
+            pausa()
         elif op == "C":
             cargar_datos_prueba(lista1)
+            pausa()
         elif op == "0":
             break
         else:
@@ -133,13 +150,16 @@ def menu_lista2():
             pasajero = leer_pasajero()                 # 1. LEER
             if lista2.añadir(pasajero):                # 2. LLAMAR
                 print("  ✓ Pasajero añadido")          # 3. MOSTRAR
+            pausa()
         elif op == "2":
             lista2.listar()
+            pausa()
         elif op == "3":
             posicion = leer_entero("  Posición: ")
             pasajero = leer_pasajero()
             if lista2.insertar(posicion, pasajero):
                 print("  ✓ Pasajero insertado")
+            pausa()
         elif op == "4":
             numero = leer_entero("  N.º de pasajero a buscar: ")
             pos = lista2.buscar(numero)
@@ -147,6 +167,7 @@ def menu_lista2():
                 print("  No existe")
             else:
                 print(f"  Encontrado en [{pos}]: {lista2.pasajeros[pos].nombre}")
+            pausa()
         elif op == "5":
             numero = leer_entero("  N.º de pasajero a buscar (lista ordenada): ")
             pos = lista2.buscar_binaria(numero)
@@ -154,6 +175,7 @@ def menu_lista2():
                 print("  No existe")
             else:
                 print(f"  Encontrado en [{pos}]: {lista2.pasajeros[pos].nombre}")
+            pausa()
         elif op == "6":
             numero = leer_entero("  N.º de pasajero a modificar: ")
             destino = input("  Nuevo destino: ").strip()
@@ -162,26 +184,32 @@ def menu_lista2():
                 print("  ✓ Pasajero modificado")
             else:
                 print("  No existe")
+            pausa()
         elif op == "7":
             posicion = leer_entero("  Posición a eliminar: ")
             eliminado = lista2.eliminar_por_posicion(posicion)
             if eliminado is not None:
                 print(f"  Eliminado: {eliminado.nombre}; quedan {lista2.longitud()}")
+            pausa()
         elif op == "8":
             numero = leer_entero("  N.º de pasajero a eliminar: ")
             if lista2.eliminar_por_valor(numero):
                 print("  ✓ Pasajero eliminado")
             else:
                 print("  No existe")
+            pausa()
         elif op == "9":
             lista2.ordenar_asc()
             print("  ✓ Ordenada de menor a mayor")
+            pausa()
         elif op == "10":
             lista2.ordenar_desc()
             print("  ✓ Ordenada de mayor a menor")
+            pausa()
         elif op == "11":
             lista2.reversar()
             print("  ✓ Lista reversada")
+            pausa()
         elif op == "12":
             copia = lista2.copiar()
             copia.reversar()                           # reverso solo la copia
@@ -189,8 +217,10 @@ def menu_lista2():
             copia.listar()
             print("  Original (no cambia):")
             lista2.listar()
+            pausa()
         elif op == "13":
             print(f"  Longitud: {lista2.longitud()}")
+            pausa()
         elif op == "14":
             destino = input("  Destino: ").strip()
             resultado = lista2.filtrar_por_destino(destino)
@@ -198,14 +228,17 @@ def menu_lista2():
                 print("  Ningún pasajero con ese destino")
             for p in resultado:
                 print(f"  {p}")
+            pausa()
         elif op == "15":
             resultado = lista2.mayores_de_edad()
             if not resultado:
                 print("  No hay mayores de edad")
             for p in resultado:
                 print(f"  {p}")
+            pausa()
         elif op == "C":
             cargar_datos_prueba(lista2)
+            pausa()
         elif op == "0":
             break
         else:
